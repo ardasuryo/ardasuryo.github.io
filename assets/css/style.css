@@ -560,7 +560,7 @@ main { overflow-x: hidden; }
 .about-banner {
   max-width: 400px;
   margin-inline: auto;
-  margin-bottom: 80px;
+  margin-bottom: 150px;
 }
 
 .about .btn {
@@ -601,17 +601,13 @@ main { overflow-x: hidden; }
   top: 5px;
   left: 5px;
   bottom: 5px;
-  width: 93px;
+  width: 100%; /* Menyesuaikan satu tombol */
   background: var(--raw-seinna);
   border-radius: 100px;
   transition: var(--transition-1);
   z-index: -1;
 }
 
-.skills-toggle.active::before {
-  left: 98px;
-  width: 94px;
-}
 
 .toggle-btn {
   color: var(--color-primary);
@@ -1121,15 +1117,18 @@ textarea.input-field {
   }
 
   .hero-banner {
-    max-width: unset;
-    height: 100%;
-    margin-bottom: 0;
+    margin-bottom: 150px; /* Jarak bawah kontainer <figure> */
+    display: flex; /* Pastikan tata letak rapi jika ada elemen lain */
+    justify-content: center; /* Pusatkan gambar jika diperlukan */
+    align-items: center;
   }
-
-  .hero img {
-    height: 100%;
-    width: auto;
-    margin-inline: auto;
+  
+  .hero-image {
+    width: 100px; /* Lebar tetap untuk gambar */
+    max-width: 100px; /* Batas maksimum lebar */
+    height: auto; /* Tinggi menyesuaikan agar proporsional */
+    object-fit: contain; /* Pastikan gambar tetap utuh tanpa distorsi */
+    display: block; /* Hindari gambar bertindak sebagai elemen inline */
   }
 
   .hero-content {
@@ -1333,6 +1332,6 @@ textarea.input-field {
    * ABOUT
    */
 
-  .about-banner { max-width: 450px; }
+  .about-banner { max-width: 500px; }
 
 }
